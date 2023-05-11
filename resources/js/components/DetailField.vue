@@ -1,27 +1,30 @@
 <template>
     <PanelItem :index="index" :field="field">
-        <icon
-            v-if="field.value"
-            slot="value"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            type="check-circle"
-            :style="{
+        {{ field.name }}
+        <template v-slot:value>
+            <icon
+                v-if="field.value"
+                slot="value"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                type="check-circle"
+                :style="{
                 'color': field.trueColor
             }"
-        />
-        <icon
-            v-else
-            slot="value"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            type="x-circle"
-            :style="{
+            />
+            <icon
+                v-else
+                slot="value"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                type="x-circle"
+                :style="{
                 'color': field.falseColor
             }"
-        />
+            />
+        </template>
     </PanelItem>
 </template>
 
